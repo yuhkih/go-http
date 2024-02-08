@@ -14,7 +14,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-
   var port string
   var ok  bool
   port, ok = os.LookupEnv("SERVER_PORT")
@@ -22,12 +21,12 @@ func main() {
 
   if !ok {
       fmt.Println("SERVER_PORT is not set")
-      port = "8081"
+      port = "8080" // default
   }
+
   fmt.Println("SERVER_PORT is " + port)
-  // port = ":8082"
-  http.HandleFunc("/", handler) 
-  // http.ListenAndServe(":8080", nil)
+
+  http.HandleFunc("/", handler)
   port = ":" + port
   http.ListenAndServe(port, nil)
 }
