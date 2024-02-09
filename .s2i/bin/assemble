@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "Making pre-invocation changes..."
 
-export SERVER_PORT=8081
 
 /usr/libexec/s2i/assemble
 rc=$?
