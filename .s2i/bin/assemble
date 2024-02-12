@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Making pre-invocation changes..."
 
-export SERVER_PORT=8082
+# export SERVER_PORT=8082  # このサンプルはビルド時に SERVER_PORT は必要ない。
 /usr/libexec/s2i/assemble
 rc=$?
 

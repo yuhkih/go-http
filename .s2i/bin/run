@@ -1,11 +1,10 @@
 #!/bin/bash
 echo "Making pre-invocation changesu in run script..."
 
-export SERVER_PORT=8082
+export SERVER_PORT=8088 # これは効く
 # need to use exec in run scrpit
 # exec /usr/libexec/s2i/run -e SERVER_PORT 8082 # これは効かなかった
-exec /usr/libexec/s2i/run -
+exec /usr/libexec/s2i/run   # ここは exec で行う必要がある。
 
 # after exec, it won't be called.
-echo "Error: assemble failed!"
 
