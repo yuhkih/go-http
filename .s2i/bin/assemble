@@ -1,8 +1,7 @@
 #!/bin/bash
 echo "Making pre-invocation changes..."
 
-
-/usr/libexec/s2i/assemble
+exec /usr/libexec/s2i/assemble
 rc=$?
 
 
