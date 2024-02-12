@@ -2,8 +2,8 @@
 echo "Making pre-invocation changes..."
 
 # export SERVER_PORT=8081
-SERVER_PORT=8081
-/usr/libexec/s2i/run      
+# SERVER_PORT=8081
+/usr/libexec/s2i/run --env SERVER_PORT=8081
 rc=$?
 
 if [ $rc -eq 0 ]; then
