@@ -1,9 +1,11 @@
 #!/bin/bash
 echo "Making pre-invocation changes..."
 
-# export SERVER_PORT=8081
+export SERVER_PORT=8081
+echo "set environment value"
 # SERVER_PORT=8081
-/usr/libexec/s2i/run --env SERVER_PORT=8081
+#  SERVER_PORT=8081
+/usr/libexec/s2i/run 
 rc=$?
 
 if [ $rc -eq 0 ]; then
