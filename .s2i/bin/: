@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Making pre-invocation changes in run..."
+
+export SERVER_PORT=8081
+exec /usr/libexec/s2i/run 
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo "Sert SERVER_PORT" $SERVER_PORT
+    echo "Making post-invocation changes..."
+else
+    echo "Error: assemble failed!"
+fi
+
+exit $rc
